@@ -10,7 +10,7 @@ const Footer = () => (
   <StaticQuery  
   query={graphql`
       query {
-        allWordpressPage( limit: 2, filter: {slug: { in: ["my-account", "productapi"] }}) {
+        allWordpressPage( limit: 2, filter: {slug: { in: ["terms-and-conditions", "privacy-policy"] }}) {
           edges {
             node {
               title

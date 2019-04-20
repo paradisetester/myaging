@@ -18,9 +18,11 @@ class Home extends Component {
 			
 		   <div css={{ marginBottom: rhythm(2) }} key={node.slug}>	
 			  {node.featured_media && (
+				  {node.featured_media.localFile.childImageSharp &&
 					<div>
 					<Img resolutions={node.featured_media.localFile.childImageSharp.resolutions} />
 					</div>
+				  }
 			  )} 
             <Link to={node.slug} css={{ textDecoration: `none` }}>
               <h3>{node.title}</h3>

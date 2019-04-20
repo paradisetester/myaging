@@ -17,13 +17,7 @@ class Home extends Component {
         {data.allWordpressPost.edges.map(({ node }) => (
 			
 		   <div css={{ marginBottom: rhythm(2) }} key={node.slug}>	
-			  {node.featured_media && (
-				  {node.featured_media.localFile.childImageSharp &&
-					<div>
-					<Img resolutions={node.featured_media.localFile.childImageSharp.resolutions} />
-					</div>
-				  }
-			  )} 
+			  
             <Link to={node.slug} css={{ textDecoration: `none` }}>
               <h3>{node.title}</h3>
             </Link>                   
@@ -44,7 +38,7 @@ export default Home
 // Set here the ID of the home page.
 export const pageQuery = graphql`
   query {    
-    allWordpressPost(sort: { fields: [date]},limit:50) {
+    allWordpressPost(sort: { fields: [date]}) {
       edges {
         node {
           title
